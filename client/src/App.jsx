@@ -20,7 +20,7 @@ const App = () => {
 
   const handleSubmit = () => {
     setLoading(true);
-    fetch("http://localhost:5000/convert", {
+    fetch("https://json-to-ts.onrender.com/convert", {
       method: "POST",
       body: JSON.stringify({
         value,
