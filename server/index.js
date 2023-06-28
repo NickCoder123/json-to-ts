@@ -32,7 +32,10 @@ app.post("/convert", async (req,res) => {
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     messages: [{ role: "user", content: prompt }],
-  });
+  })
+    .catch((err) => {
+      console.error(err);
+    })
 
   res.json({
     message: "Success",
